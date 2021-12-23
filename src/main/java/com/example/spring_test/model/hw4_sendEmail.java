@@ -1,4 +1,4 @@
-package com.example.spring_test;
+package com.example.spring_test.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;

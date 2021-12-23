@@ -1,7 +1,7 @@
-package com.example.spring_test;
+package com.example.spring_test.controller;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.spring_test.model.hw4_email;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
@@ -12,23 +12,25 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 
 @Controller
-public class SpringBootHelloWorld {
-    @Autowired
-//    hw4_sendEmail hw4_m;
-    private JavaMailSender mailSender;
+public class MainController {
+    private final JavaMailSender mailSender;
+
+    public MainController(JavaMailSender mailSender) {
+        this.mailSender = mailSender;
+    }
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
 
     }
 
-    @GetMapping("/hello")
-    public String hello(){
-        return "Hey, Spring Boot 的 Hello World !";
+    @GetMapping("/")
+    public String index(){
+        return "index";
     }
 
     @GetMapping("/hw1")
-    public String HW1(){
+    public String HW1() {
         return "hw1";
     }
 
@@ -43,14 +45,14 @@ public class SpringBootHelloWorld {
     }
 
     @GetMapping("/hw4")
-    public String showPage(Model model) {
+    public String HW4(Model model) {
         model.addAttribute("mail", new hw4_email());
         return "hw4";
     }
 
     @PostMapping("/hw4")
-    public String showPage(@ModelAttribute("mail") hw4_email mail) {
-//        hw4_m.sendMail(mail.getEmail(), mail.getTitle(), mail.getContent());
+    public String HW4(@ModelAttribute("mail") hw4_email mail) {
+//        m.sendMail(mail.getEmail(), mail.getTitle(), mail.getContent());
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom("b0744113@cgu.edu.tw");
         message.setTo(mail.getEmail());

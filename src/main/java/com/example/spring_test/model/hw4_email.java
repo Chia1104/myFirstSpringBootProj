@@ -1,4 +1,4 @@
-package com.example.spring_test;
+package com.example.spring_test.model;
 
 public class hw4_email {
     private String email;
