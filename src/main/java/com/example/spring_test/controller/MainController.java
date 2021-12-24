@@ -1,6 +1,7 @@
 package com.example.spring_test.controller;
 
 
+import com.example.spring_test.model.hw2_info;
 import com.example.spring_test.model.hw4_email;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -35,8 +36,16 @@ public class MainController {
     }
 
     @GetMapping("/hw2")
-    public String HW2(){
+    public String HW2(Model model){
+        hw2_info info = new hw2_info();
+        model.addAttribute("info", info);
         return "hw2";
+    }
+
+    @PostMapping("/hw2")
+    public String hw2Details(@ModelAttribute hw2_info info, Model model) {
+        model.addAttribute("info", info);
+        return "redirect:/hw2_details";
     }
 
     @GetMapping("/hw3")
