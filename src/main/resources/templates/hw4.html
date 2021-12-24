@@ -14,18 +14,40 @@
 <body>
 <h1>This is HW4</h1>
 <form method="post" th:action="@{/hw4}" th:object="${mail}" class="container container_area_col ai_center">
-    <div class="container_area_row">
-        <p>E-mail: </p>
-        <input type="text" id="email" name="email" />
-    </div>
-    <div class="container_area_row">
-        <p>Subject: </p>
-        <input type="text" id="title" name="title" />
-    </div>
-    <div class="container_area_row">
-        <p>Content: </p>
-        <input type="text" id="content" name="content" />
-    </div>
+    <table>
+        <tr>
+            <td>
+                <p>From: </p>
+            </td>
+            <td>
+                <input type="text" id="from" name="from" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>E-mail: </p>
+            </td>
+            <td>
+                <input type="text" id="email" name="email" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Subject: </p>
+            </td>
+            <td>
+                <input type="text" id="title" name="title" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Content: </p>
+            </td>
+            <td>
+                <input type="text" id="content" name="content" />
+            </td>
+        </tr>
+    </table>
     <button type="submit">Send</button>
 </form>
 </body>

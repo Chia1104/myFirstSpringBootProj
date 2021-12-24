@@ -52,14 +52,14 @@ public class MainController {
 
     @PostMapping("/hw4")
     public String HW4(@ModelAttribute("mail") hw4_email mail) {
-//        m.sendMail(mail.getEmail(), mail.getTitle(), mail.getContent());
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("b0744113@cgu.edu.tw");
+        message.setFrom(mail.getFrom());
         message.setTo(mail.getEmail());
         message.setSubject(mail.getTitle());
         message.setText(mail.getContent());
         mailSender.send(message);
 
+        System.out.println("From: " + mail.getFrom());
         System.out.println("E-mail: " + mail.getEmail());
         System.out.println("Title: " + mail.getTitle());
         System.out.println("Content: " + mail.getContent());

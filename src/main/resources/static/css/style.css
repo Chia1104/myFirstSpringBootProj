@@ -59,13 +59,11 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px 0;
 }
 .container_area_row {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 0;
 }
 .ai_center {
     align-items: center;
