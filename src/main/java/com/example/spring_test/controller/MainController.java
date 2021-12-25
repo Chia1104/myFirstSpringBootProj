@@ -1,6 +1,5 @@
 package com.example.spring_test.controller;
 
-
 import com.example.spring_test.model.hw2_info;
 import com.example.spring_test.model.hw4_email;
 import org.springframework.mail.SimpleMailMessage;
@@ -10,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
 
 @Controller
 public class MainController {
@@ -43,14 +41,18 @@ public class MainController {
     }
 
     @PostMapping("/hw2_details")
-    public String hw2Details(@ModelAttribute hw2_info info, Model model) {
-        model.addAttribute("info", info);
+    public String hw2Details(@ModelAttribute("info") hw2_info info) {
         return "hw2_details";
     }
 
     @GetMapping("/hw3")
     public String HW3(){
         return "hw3";
+    }
+
+    @PostMapping("/hw3_details")
+    public String hw3Details() {
+        return "hw3_details";
     }
 
     @GetMapping("/hw4")

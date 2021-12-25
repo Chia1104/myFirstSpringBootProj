@@ -4,16 +4,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 
-public class hw4_sendEmail {
+public class SendEmail {
     @Autowired
     private JavaMailSender emailSender;
 
-    public void sendMail(String to, String subject, String text) {
+    public void sendMail(String from, String to, String subject, String content) {
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("b0744113@cgu.edu.tw");
+        message.setFrom(from);
         message.setTo(to);
         message.setSubject(subject);
-        message.setText(text);
+        message.setText(content);
         emailSender.send(message);
     }
 
