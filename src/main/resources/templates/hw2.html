@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, Chrome=1">
@@ -13,77 +13,77 @@
 </head>
 <body>
 <h1>This is HW2</h1>
-<form method="post" th:action="@{/hw2}" th:object="${info}" class="container container_area_col ai_center">
+<form method="post" th:action="@{/hw2_details}" th:object="${info}" class="container container_area_col ai_center">
     <table>
         <tr>
             <td><p>姓名: </p></td>
-            <td><input type="text" id="name" name="name" style="width: 100%"/></td>
+            <td><input type="text" id="name" name="name" style="width: 100%" th:field="*{name}"/></td>
         </tr>
         <tr>
             <td><p>性別: </p></td>
             <td class="container_area_row">
-                <input type="radio" id="femle" name="sex" value="femle"/>
+                <input type="radio" id="femle" name="sex" value="femle" th:field="*{sex}"/>
                 <p>女</p>
-                <input type="radio" id="male" name="sex" value="male"/>
+                <input type="radio" id="male" name="sex" value="male" th:field="*{sex}"/>
                 <p>男</p>
             </td>
         </tr>
         <tr>
             <td><p>出生(年/月/日): </p></td>
-            <td><input type="date" id="date" name="date" style="width: 100%"/></td>
+            <td><input type="date" id="date" name="date" style="width: 100%" th:field="*{date}"/></td>
         </tr>
         <tr>
             <td><p>電話: </p></td>
-            <td><input type="text" id="phone" name="phone" style="width: 100%"/></td>
+            <td><input type="text" id="phone" name="phone" style="width: 100%" th:field="*{phone}"/></td>
         </tr>
         <tr>
             <td><p>E-mail: </p></td>
-            <td><input type="email" id="email" name="email" style="width: 100%"/></td>
+            <td><input type="email" id="email" name="email" style="width: 100%" th:field="*{email}"/></td>
         </tr>
         <tr>
             <td><p>方便聯絡時間: </p></td>
-            <td><input type="date" id="cdate" name="cdate" style="width: 100%"/></td>
+            <td><input type="date" id="cdate" name="cdate" style="width: 100%" th:field="*{cdate}"/></td>
         </tr>
         <tr>
             <td><p>地址: </p></td>
-            <td><input type="text" id="address" name="address" style="width: 100%"/></td>
+            <td><input type="text" id="address" name="address" style="width: 100%" th:field="*{address}"/></td>
         </tr>
         <tr>
             <td><p>最高學歷: </p></td>
-            <td><input type="text" id="study" name="study" style="width: 100%"/></td>
+            <td><input type="text" id="study" name="study" style="width: 100%" th:field="*{study}"/></td>
         </tr>
         <tr>
             <td><p>工作經驗: </p></td>
-            <td><input type="text" id="workExperience" name="workExperience" style="width: 100%"/></td>
+            <td><input type="text" id="workExperience" name="workExperience" style="width: 100%" th:field="*{workExperience}"/></td>
         </tr>
         <tr>
             <td><p>家庭現況: </p></td>
             <td class="container_area_row">
-                <input type="radio" id="married" name="home" value="married"/>
+                <input type="radio" id="married" name="home" value="married" th:field="*{home}"/>
                 <p>已婚</p>
-                <input type="radio" id="unmarried" name="home" value="unmarried"/>
+                <input type="radio" id="unmarried" name="home" value="unmarried" th:field="*{home}"/>
                 <p>未婚</p>
                 <input type="radio" id="otherRadio" name="home" value="other"/>
                 <p>其他</p>
-                <input type="text" id="otherInput" name="home" />
+                <input type="text" id="otherInput" name="home" th:field="*{home}"/>
             </td>
         </tr>
         <tr>
             <td><p>應徵職位: </p></td>
-            <td><input type="text" id="work" name="work" style="width: 100%"/></td>
+            <td><input type="text" id="work" name="work" style="width: 100%" th:field="*{work}"/></td>
         </tr>
         <tr>
             <td><p>交通工具: </p></td>
             <td class="container_area_row">
-                <input type="radio" id="car" name="transport" value="car"/>
+                <input type="radio" id="car" name="transport" value="car" th:field="*{transport}"/>
                 <p>汽車</p>
-                <input type="radio" id="bike" name="transport" value="bike"/>
+                <input type="radio" id="bike" name="transport" value="bike" th:field="*{transport}"/>
                 <p>機車</p>
             </td>
         </tr>
         <tr>
             <td><p>工作時間: </p></td>
-            <td><input type="date" id="wdate" name="wdate" style="width: 100%"/></td>
+            <td><input type="date" id="wdate" name="wdate" style="width: 100%" th:field="*{wdate}"/></td>
         </tr>
     </table>
     <button type="submit">Send</button>

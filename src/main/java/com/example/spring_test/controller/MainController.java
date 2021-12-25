@@ -42,10 +42,10 @@ public class MainController {
         return "hw2";
     }
 
-    @PostMapping("/hw2")
+    @PostMapping("/hw2_details")
     public String hw2Details(@ModelAttribute hw2_info info, Model model) {
         model.addAttribute("info", info);
-        return "redirect:/hw2_details";
+        return "hw2_details";
     }
 
     @GetMapping("/hw3")
@@ -73,6 +73,11 @@ public class MainController {
         System.out.println("Title: " + mail.getTitle());
         System.out.println("Content: " + mail.getContent());
         return "redirect:/hw4";
+    }
+
+    @GetMapping("/hw5")
+    public String HW5() {
+        return "hw5";
     }
 
     @GetMapping("/chiasweb")

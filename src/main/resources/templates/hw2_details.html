@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, Chrome=1">
@@ -12,83 +12,85 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div class="container container_area_col ai_center">
     <table>
         <tr>
             <td><p>姓名: </p></td>
-            <td><p></p></td>
+            <td><p th:text="${info.name}"></p></td>
         </tr>
         <tr>
             <td><p>性別: </p></td>
             <td>
-                <p></p>
+                <p th:text="${info.sex}"></p>
             </td>
         </tr>
         <tr>
             <td><p>出生(年/月/日): </p></td>
             <td>
-                <p></p>
+                <p th:text="${info.date}"></p>
             </td>
         </tr>
         <tr>
             <td><p>電話: </p></td>
             <td>
-                <p></p>
+                <p th:text="${info.phone}"></p>
             </td>
         </tr>
         <tr>
             <td><p>E-mail: </p></td>
             <td>
-                <p></p>
+                <p th:text="${info.email}"></p>
             </td>
         </tr>
         <tr>
             <td><p>方便聯絡時間: </p></td>
             <td>
-                <p></p>
+                <p th:text="${info.cdate}"></p>
             </td>
         </tr>
         <tr>
             <td><p>地址: </p></td>
             <td>
-                <p></p>
+                <p th:text="${info.address}"></p>
             </td>
         </tr>
         <tr>
             <td><p>最高學歷: </p></td>
             <td>
-                <p></p>
+                <p th:text="${info.study}"></p>
             </td>
         </tr>
         <tr>
             <td><p>工作經驗: </p></td>
             <td>
-                <p></p>
+                <p th:text="${info.workExperience}"></p>
             </td>
         </tr>
         <tr>
             <td><p>家庭現況: </p></td>
             <td>
-                <p></p>
+                <p th:text="${info.home}"></p>
             </td>
         </tr>
         <tr>
             <td><p>應徵職位: </p></td>
             <td>
-                <p></p>
+                <p th:text="${info.work}"></p>
             </td>
         </tr>
         <tr>
             <td><p>交通工具: </p></td>
             <td>
-                <p></p>
+                <p th:text="${info.transport}"></p>
             </td>
         </tr>
         <tr>
             <td><p>工作時間: </p></td>
             <td>
-                <p></p>
+                <p th:text="${info.wdate}"></p>
             </td>
         </tr>
     </table>
+</div>
 </body>
 </html>
