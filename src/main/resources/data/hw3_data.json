@@ -1,0 +1,58 @@
+[
+  {
+    "empno": 7369,
+    "ename": "smith",
+    "job": "clerk",
+    "mgr": 7902,
+    "salary": 800,
+    "deptno": 20
+  },
+  {
+    "empno": 7499,
+    "ename": "allen",
+    "job": "salesman",
+    "mgr": 7698,
+    "salary": 1600,
+    "deptno": 30
+  },
+  {
+    "empno": 7521,
+    "ename": "ward",
+    "job": "salesman",
+    "mgr": 7698,
+    "salary": 1250,
+    "deptno": 30
+  },
+  {
+    "empno": 7566,
+    "ename": "jones",
+    "job": "manager",
+    "mgr": 7839,
+    "salary": 2975,
+    "deptno": 20
+  },
+  {
+    "empno": 7902,
+    "ename": "ford",
+    "job": "analyst",
+    "mgr": 7566,
+    "salary": 3000,
+    "deptno": 20
+  },
+  {
+    "empno": 7698,
+    "ename": "blake",
+    "job": "manager",
+    "mgr": 7839,
+    "salary": 2850,
+    "deptno": 30
+  },
+  {
+    "empno": 7839,
+    "ename": "king",
+    "job": "president",
+    "mgr": 7689,
+    "salary": 5000,
+    "deptno": 10
+  }
+]

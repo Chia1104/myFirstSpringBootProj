@@ -1,22 +1,20 @@
 package com.example.spring_test.controller;
 
-import com.example.spring_test.model.hw2_info;
-import com.example.spring_test.model.hw4_email;
-import org.springframework.mail.SimpleMailMessage;
+import com.example.spring_test.model.dao.HW3DataDAO;
+import com.example.spring_test.model.dao.SendEmail;
+import com.example.spring_test.model.entity.hw2_info;
+import com.example.spring_test.model.entity.hw4_email;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MainController {
-    private final JavaMailSender mailSender;
-
-    public MainController(JavaMailSender mailSender) {
-        this.mailSender = mailSender;
-    }
+    @Autowired
+    SendEmail sendEmail;
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
@@ -63,17 +61,7 @@ public class MainController {
 
     @PostMapping("/hw4")
     public String HW4(@ModelAttribute("mail") hw4_email mail) {
-        SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom(mail.getFrom());
-        message.setTo(mail.getEmail());
-        message.setSubject(mail.getTitle());
-        message.setText(mail.getContent());
-        mailSender.send(message);
-
-        System.out.println("From: " + mail.getFrom());
-        System.out.println("E-mail: " + mail.getEmail());
-        System.out.println("Title: " + mail.getTitle());
-        System.out.println("Content: " + mail.getContent());
+        sendEmail.sendMail(mail.getFrom(), mail.getEmail(), mail.getTitle(), mail.getContent());
         return "redirect:/hw4";
     }
 

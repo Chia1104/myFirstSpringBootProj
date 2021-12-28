@@ -25,9 +25,9 @@ public class IDidentify {
     }
     static void check(String a){
         int index = 0;
-        char firstLetter= a.charAt(0);//抓出字串第一個英文
-        for(int i = 1; i<= a.length()-1; i++){
-            stringToIntArray[i]=(int)(a.charAt(i))-48;//把身分證字號放入stringToIntArray[]，inputString.charAt(i)裡面的是字元1->49所以減48int 1
+        char firstLetter = a.charAt(0);//抓出字串第一個英文
+        for(int i = 1; i <= a.length() - 1; i++){
+            stringToIntArray[i] = (int)(a.charAt(i))-48;//把身分證字號放入stringToIntArray[]，inputString.charAt(i)裡面的是字元1->49所以減48int 1
 
             System.out.println(stringToIntArray[i]);//偷偷檢查自己有沒有抓到
         }

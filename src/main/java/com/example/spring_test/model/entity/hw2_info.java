@@ -1,4 +1,4 @@
-package com.example.spring_test.model;
+package com.example.spring_test.model.entity;
 
 public class hw2_info {
     private String name;
