@@ -1,4 +1,4 @@
-package com.example.spring_test.model.dao;
+package com.example.spring_test.model.dao.repository;
 
 import com.example.spring_test.model.entity.hw3_data;
 import com.example.spring_test.model.parameter.HW3DataQueryParameter;
@@ -18,7 +18,7 @@ public class HW3DataDAO {
     private final List<hw3_data> data3DB = new ArrayList<>();
 
     @PostConstruct
-    private void initDB() throws FileNotFoundException {
+    private void initDB() {
         data3DB.add(new hw3_data("7369", "smith", "clerk", "7902", "800", "20"));
         data3DB.add(new hw3_data("7499", "allen", "salesman", "7698", "1600", "30"));
         data3DB.add(new hw3_data("7521", "ward", "salesman", "7698", "1250", "30"));

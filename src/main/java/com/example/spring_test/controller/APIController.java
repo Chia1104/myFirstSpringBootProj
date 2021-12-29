@@ -13,25 +13,28 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "hw3api", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "api", produces = MediaType.APPLICATION_JSON_VALUE)
 public class APIController {
-    @Autowired
-    private HW3DataService data3Service;
+    private final HW3DataService data3Service;
 
-    @GetMapping("/{empno}")
+    public APIController(HW3DataService data3Service) {
+        this.data3Service = data3Service;
+    }
+
+    @GetMapping("hw3/{empno}")
     public ResponseEntity<hw3_data> getEmployee(@PathVariable("empno") String empno) {
         hw3_data data3 = data3Service.getEmployee(empno);
         return ResponseEntity.ok(data3);
     }
 
-    @GetMapping
+    @GetMapping("hw3")
     public ResponseEntity<List<hw3_data>> getEmployee(@ModelAttribute HW3DataQueryParameter param) {
         List<hw3_data> data3 = data3Service.getEmployee(param);
         return ResponseEntity.ok(data3);
     }
 
-    @PostMapping
-    public ResponseEntity<hw3_data> createProduct(@RequestBody hw3_data request) {
+    @PostMapping("/hw3")
+    public ResponseEntity<hw3_data> createEmployee(@RequestBody hw3_data request) {
         hw3_data data3 = data3Service.createEmployee(request);
 
         URI location = ServletUriComponentsBuilder
@@ -43,15 +46,15 @@ public class APIController {
         return ResponseEntity.created(location).body(data3);
     }
 
-    @PutMapping("/{empno}")
-    public ResponseEntity<hw3_data> replaceProduct(
+    @PutMapping("/hw3/{empno}")
+    public ResponseEntity<hw3_data> replaceEmployee(
             @PathVariable("empno") String empno, @RequestBody hw3_data request) {
         hw3_data data3 = data3Service.replaceEmployee(empno, request);
         return ResponseEntity.ok(data3);
     }
 
-    @DeleteMapping("/{empno}")
-    public ResponseEntity deleteProduct(@PathVariable("empno") String empno) {
+    @DeleteMapping("/hw3/{empno}")
+    public ResponseEntity deleteEmployee(@PathVariable("empno") String empno) {
         data3Service.deleteEmployee(empno);
         return ResponseEntity.noContent().build();
     }

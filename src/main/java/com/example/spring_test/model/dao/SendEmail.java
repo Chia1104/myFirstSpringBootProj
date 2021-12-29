@@ -7,8 +7,11 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class SendEmail {
-    @Autowired
-    private JavaMailSender emailSender;
+    private final JavaMailSender emailSender;
+
+    public SendEmail(JavaMailSender emailSender) {
+        this.emailSender = emailSender;
+    }
 
     public void sendMail(String from, String to, String subject, String content) {
         SimpleMailMessage message = new SimpleMailMessage();

@@ -2,10 +2,9 @@ package com.example.spring_test.model.service;
 
 import com.example.spring_test.controller.exception.NotFoundException;
 import com.example.spring_test.controller.exception.UnprocessableEntityException;
-import com.example.spring_test.model.dao.HW3DataDAO;
+import com.example.spring_test.model.dao.repository.HW3DataDAO;
 import com.example.spring_test.model.entity.hw3_data;
 import com.example.spring_test.model.parameter.HW3DataQueryParameter;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,8 +12,11 @@ import java.util.List;
 @Service
 public class HW3DataService {
 
-    @Autowired
-    private HW3DataDAO data3DAO;
+    private final HW3DataDAO data3DAO;
+
+    public HW3DataService(HW3DataDAO data3DAO) {
+        this.data3DAO = data3DAO;
+    }
 
     public hw3_data createEmployee(hw3_data request) {
         boolean isIdDuplicated = data3DAO.find(request.getEmpno()).isPresent();

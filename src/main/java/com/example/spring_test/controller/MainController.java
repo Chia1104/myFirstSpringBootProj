@@ -1,24 +1,19 @@
 package com.example.spring_test.controller;
 
-import com.example.spring_test.model.dao.HW3DataDAO;
 import com.example.spring_test.model.dao.SendEmail;
 import com.example.spring_test.model.entity.hw2_info;
 import com.example.spring_test.model.entity.hw4_email;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MainController {
-    @Autowired
+    final
     SendEmail sendEmail;
 
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-
+    public MainController(SendEmail sendEmail) {
+        this.sendEmail = sendEmail;
     }
 
     @GetMapping("/")
