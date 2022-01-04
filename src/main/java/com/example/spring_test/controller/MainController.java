@@ -1,7 +1,7 @@
 package com.example.spring_test.controller;
 
-import com.example.spring_test.model.IDidentify;
-import com.example.spring_test.model.dao.SendEmail;
+import com.example.spring_test.repository.IDidentify;
+import com.example.spring_test.service.SendEmail;
 import com.example.spring_test.model.entity.hw2_info;
 import com.example.spring_test.model.entity.hw4_email;
 import com.example.spring_test.model.entity.hw5_id;

@@ -1,4 +1,4 @@
-package com.example.spring_test.model.parameter;
+package com.example.spring_test.parameter;
 
 public class HW3DataQueryParameter {
     private String keyword;

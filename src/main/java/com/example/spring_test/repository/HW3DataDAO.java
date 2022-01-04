@@ -1,15 +1,10 @@
-package com.example.spring_test.model.dao.repository;
+package com.example.spring_test.repository;
 
 import com.example.spring_test.model.entity.hw3_data;
-import com.example.spring_test.model.parameter.HW3DataQueryParameter;
-import org.springframework.beans.factory.annotation.Value;
+import com.example.spring_test.parameter.HW3DataQueryParameter;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.util.*;
 import java.util.stream.Collectors;
 

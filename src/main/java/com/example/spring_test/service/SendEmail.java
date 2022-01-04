@@ -1,4 +1,4 @@
-package com.example.spring_test.model.dao;
+package com.example.spring_test.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;

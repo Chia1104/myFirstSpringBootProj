@@ -1,9 +1,8 @@
 package com.example.spring_test.controller;
 
 import com.example.spring_test.model.entity.hw3_data;
-import com.example.spring_test.model.parameter.HW3DataQueryParameter;
-import com.example.spring_test.model.service.HW3DataService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.spring_test.parameter.HW3DataQueryParameter;
+import com.example.spring_test.service.HW3DataService;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

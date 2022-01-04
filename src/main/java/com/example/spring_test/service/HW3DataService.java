@@ -1,10 +1,10 @@
-package com.example.spring_test.model.service;
+package com.example.spring_test.service;
 
 import com.example.spring_test.controller.exception.NotFoundException;
 import com.example.spring_test.controller.exception.UnprocessableEntityException;
-import com.example.spring_test.model.dao.repository.HW3DataDAO;
+import com.example.spring_test.repository.HW3DataDAO;
 import com.example.spring_test.model.entity.hw3_data;
-import com.example.spring_test.model.parameter.HW3DataQueryParameter;
+import com.example.spring_test.parameter.HW3DataQueryParameter;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

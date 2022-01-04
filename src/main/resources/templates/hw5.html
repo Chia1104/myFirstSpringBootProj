@@ -23,11 +23,11 @@
                 <p>ID: </p>
             </td>
             <td>
-                <input type="text" id="id" name="id" th:field="*{idinput}"/>
+                <input type="text" id="id" name="id"/>
             </td>
         </tr>
     </table>
-    <p th:if="${#fields.hasErrors('idinput')}" th:errorclass="errorMessage" th:errors="*{idinput}" />
+<!--    <p th:if="${#fields.hasErrors('idinput')}" th:errorclass="errorMessage" th:errors="*{idinput}" />-->
     <button type="submit">Check</button>
 </form>
 
