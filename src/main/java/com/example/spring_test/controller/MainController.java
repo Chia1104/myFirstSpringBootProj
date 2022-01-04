@@ -1,8 +1,10 @@
 package com.example.spring_test.controller;
 
+import com.example.spring_test.model.IDidentify;
 import com.example.spring_test.model.dao.SendEmail;
 import com.example.spring_test.model.entity.hw2_info;
 import com.example.spring_test.model.entity.hw4_email;
+import com.example.spring_test.model.entity.hw5_id;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,9 +13,12 @@ import org.springframework.web.bind.annotation.*;
 public class MainController {
     final
     SendEmail sendEmail;
+    private final IDidentify ididentify;
 
-    public MainController(SendEmail sendEmail) {
+    public MainController(SendEmail sendEmail, IDidentify ididentify) {
+
         this.sendEmail = sendEmail;
+        this.ididentify = ididentify;
     }
 
     @GetMapping("/")
@@ -63,6 +68,12 @@ public class MainController {
     @GetMapping("/hw5")
     public String HW5() {
         return "hw5";
+    }
+
+    @PostMapping("/hw5")
+    public String HW5(@ModelAttribute("hw5id") hw5_id hw5id) {
+        ididentify.identify(hw5id.getId());
+        return "redirect:/hw5";
     }
 
     @GetMapping("/chiasweb")

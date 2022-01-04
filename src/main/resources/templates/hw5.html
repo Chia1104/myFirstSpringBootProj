@@ -15,6 +15,21 @@
 <div class="container">
     <h1>This is HW5</h1>
 </div>
+<!--/*@thymesVar id="hw5id" type="templates"*/-->
+<form method="post" th:action="@{/hw5}" th:object="${hw5id}" class="container container_area_col ai_center">
+    <table>
+        <tr>
+            <td>
+                <p>ID: </p>
+            </td>
+            <td>
+                <input type="text" id="id" name="id" th:field="*{idinput}"/>
+            </td>
+        </tr>
+    </table>
+    <p th:if="${#fields.hasErrors('idinput')}" th:errorclass="errorMessage" th:errors="*{idinput}" />
+    <button type="submit">Check</button>
+</form>
 
 </body>
 </html>

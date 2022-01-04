@@ -23,6 +23,9 @@ img {
 a {
 	text-decoration: none;
 }
+.errorMessage {
+    color: red;
+}
 .container {
     width: 100%;
     padding-right: 15px;
