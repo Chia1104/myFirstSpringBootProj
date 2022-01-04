@@ -1,5 +1,7 @@
 package com.example.spring_test.repository;
 
+import com.example.spring_test.SpringTestApplication;
+import org.springframework.boot.SpringApplication;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
@@ -12,7 +14,10 @@ public class IDidentify {
     static int[] stringToIntArray = new int[26];//放輸入的字串
 
     public String identify(String id){
-        insertCharacter();
+        for(int i = 0; i <= 25; i++){
+            characterArray[i] = (char) (65 + i);//把英文字母放入字元陣列，強制轉型A->65
+        }
+        id = id.toUpperCase();
         int index = 0;
         char firstLetter = id.charAt(0);
         for(int i = 1; i <= id.length() - 1; i++){
@@ -28,10 +33,10 @@ public class IDidentify {
 
         String message;
         if(stringToIntArray[9] == checkCode){
-            message = "身分證正確";
+            message = "correct";
             System.out.println("身分證正確");
         }else{
-            message = "身分證錯誤";
+            message = "error";
             System.out.println("身分證錯誤");
         }
 

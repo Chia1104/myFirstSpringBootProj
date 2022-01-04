@@ -15,7 +15,6 @@
 <div class="container">
     <h1>This is HW5</h1>
 </div>
-<!--/*@thymesVar id="hw5id" type="templates"*/-->
 <form method="post" th:action="@{/hw5}" th:object="${hw5id}" class="container container_area_col ai_center">
     <table>
         <tr>
@@ -23,11 +22,11 @@
                 <p>ID: </p>
             </td>
             <td>
-                <input type="text" id="id" name="id"/>
+                <input type="text" id="id" name="id" th:field="*{id}"/>
             </td>
         </tr>
     </table>
-<!--    <p th:if="${#fields.hasErrors('idinput')}" th:errorclass="errorMessage" th:errors="*{idinput}" />-->
+    <p th:if="${#fields.hasErrors('id')}" th:errors="*{id}" th:class="${#fields.hasErrors('id')}? errorMessage">身分證錯誤!!</p>
     <button type="submit">Check</button>
 </form>
 

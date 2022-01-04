@@ -7,7 +7,10 @@ import com.example.spring_test.model.entity.hw4_email;
 import com.example.spring_test.model.entity.hw5_id;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @Controller
 public class MainController {
@@ -54,26 +57,29 @@ public class MainController {
     }
 
     @GetMapping("/hw4")
-    public String HW4(Model model) {
+    public String SHOWHW4(Model model) {
         model.addAttribute("mail", new hw4_email());
         return "hw4";
     }
 
     @PostMapping("/hw4")
-    public String HW4(@ModelAttribute("mail") hw4_email mail) {
+    public String SENDHW4(@ModelAttribute("mail") hw4_email mail) {
         sendEmail.sendMail(mail.getFrom(), mail.getEmail(), mail.getTitle(), mail.getContent());
         return "redirect:/hw4";
     }
 
     @GetMapping("/hw5")
-    public String HW5() {
+    public String SHOWHW5(Model model) {
+        model.addAttribute("hw5id", new hw5_id());
         return "hw5";
     }
 
     @PostMapping("/hw5")
-    public String HW5(@ModelAttribute("hw5id") hw5_id hw5id) {
-        ididentify.identify(hw5id.getId());
-        return "redirect:/hw5";
+    public String CHECKHW5(@ModelAttribute("hw5id") @Valid hw5_id hw5id, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "hw5";
+        }
+        return "redirect:/chiasweb";
     }
 
     @GetMapping("/chiasweb")
