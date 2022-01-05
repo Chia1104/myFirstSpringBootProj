@@ -22,7 +22,7 @@
                 <p>From: </p>
             </td>
             <td>
-                <input type="text" id="from" name="from" />
+                <input type="text" id="from" name="from" th:field="*{from}"/>
             </td>
         </tr>
         <tr>
@@ -30,7 +30,7 @@
                 <p>E-mail: </p>
             </td>
             <td>
-                <input type="text" id="email" name="email" />
+                <input type="text" id="email" name="email" th:field="*{email}"/>
             </td>
         </tr>
         <tr>
@@ -38,7 +38,7 @@
                 <p>Subject: </p>
             </td>
             <td>
-                <input type="text" id="title" name="title" />
+                <input type="text" id="title" name="title" th:field="*{title}"/>
             </td>
         </tr>
         <tr>
@@ -46,10 +46,15 @@
                 <p>Content: </p>
             </td>
             <td>
-                <input type="text" id="content" name="content" />
+                <input type="text" id="content" name="content" th:field="*{content}"/>
             </td>
         </tr>
     </table>
+    <div th:if="${#fields.hasAnyErrors()}">
+        <ul>
+            <li th:each="err : ${#fields.allErrors()}" th:text="${err}" class="errorMessage"/>
+        </ul>
+    </div>
     <button type="submit">Send</button>
 </form>
 </body>

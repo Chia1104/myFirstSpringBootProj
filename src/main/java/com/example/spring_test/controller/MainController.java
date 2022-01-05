@@ -11,21 +11,22 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Date;
 
 @Controller
 public class MainController {
     final
     SendEmail sendEmail;
-    private final IDidentify ididentify;
 
-    public MainController(SendEmail sendEmail, IDidentify ididentify) {
+    public MainController(SendEmail sendEmail) {
 
         this.sendEmail = sendEmail;
-        this.ididentify = ididentify;
     }
 
     @GetMapping("/")
-    public String index(){
+    public String index(Model model){
+        model.addAttribute("today", new Date());
+        model.addAttribute("welcome", "This is Spring Boot and Tomcat Homework");
         return "index";
     }
 
@@ -63,7 +64,10 @@ public class MainController {
     }
 
     @PostMapping("/hw4")
-    public String SENDHW4(@ModelAttribute("mail") hw4_email mail) {
+    public String SENDHW4(@ModelAttribute("mail") @Valid hw4_email mail, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "hw4";
+        }
         sendEmail.sendMail(mail.getFrom(), mail.getEmail(), mail.getTitle(), mail.getContent());
         return "redirect:/hw4";
     }

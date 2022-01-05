@@ -23,6 +23,9 @@ img {
 a {
 	text-decoration: none;
 }
+.home_a {
+    margin: 0 5px;
+}
 .errorMessage {
     color: red;
 }

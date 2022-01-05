@@ -9,7 +9,7 @@ import javax.validation.constraints.Size;
 public class hw5_id {
 
     @NotEmpty(message = "ID不可空白")
-    @Size(min=10, max=10)
+    @Size(min=10, max=10, message = "ID長度不對")
     @HW5Id
     private String id;
 

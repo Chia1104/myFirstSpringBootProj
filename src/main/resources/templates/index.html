@@ -21,14 +21,15 @@
 
 <body>
 <div class="container">
-    <h1>Spring Boot and Tomcat Homework</h1>
+    <h1 th:text="${welcome}"></h1>
+    <p th:text="'現在時間： ' +${today}"></p>
 </div>
 <div class="container container_area_row ai_center">
-    <a href="hw1.html" th:href="@{/hw1}"><button type="submit">HW1</button></a>
-    <a href="hw2.html" th:href="@{/hw2}"><button type="submit">HW2</button></a>
-    <a href="hw3.html" th:href="@{/hw3}"><button type="submit">HW3</button></a>
-    <a href="hw4.html" th:href="@{/hw4}"><button type="submit">HW4</button></a>
-    <a href="hw5.html" th:href="@{/hw5}"><button type="submit">HW5</button></a>
+    <a href="hw1.html" th:href="@{/hw1}" class="home_a"><button type="submit">HW1</button></a>
+    <a href="hw2.html" th:href="@{/hw2}" class="home_a"><button type="submit">HW2</button></a>
+    <a href="hw3.html" th:href="@{/hw3}" class="home_a"><button type="submit">HW3</button></a>
+    <a href="hw4.html" th:href="@{/hw4}" class="home_a"><button type="submit">HW4</button></a>
+    <a href="hw5.html" th:href="@{/hw5}" class="home_a"><button type="submit">HW5</button></a>
 </div>
 </body>
 

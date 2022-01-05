@@ -1,9 +1,19 @@
 package com.example.spring_test.model.entity;
 
+import com.example.spring_test.validation.annotation.EmailC;
+
+import javax.validation.constraints.NotEmpty;
+
 public class hw4_email {
+    @NotEmpty(message = "From不可空白")
+    @EmailC
     private String from;
+    @NotEmpty(message = "To不可空白")
+    @EmailC
     private String email;
+    @NotEmpty(message = "Title不可空白")
     private String title;
+    @NotEmpty(message = "Content不可空白")
     private String content;
     private String date;
 
