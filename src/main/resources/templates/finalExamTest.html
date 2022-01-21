@@ -15,5 +15,26 @@
 <div class="container">
     <h1>finalExamTest</h1>
 </div>
+<form method="post" th:action="@{/finalExamTest}" class="container container_area_col ai_center">
+    <table>
+        <tr>
+            <td>
+                <p>E-mail: </p>
+            </td>
+            <td>
+                <input type="email" id="email" name="email" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Password: </p>
+            </td>
+            <td>
+                <input type="password" id="password" name="password" />
+            </td>
+        </tr>
+    </table>
+    <button type="submit">Login</button>
+</form>
 </body>
 </html>

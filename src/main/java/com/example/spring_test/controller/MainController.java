@@ -86,6 +86,11 @@ public class MainController {
         return "redirect:/chiasweb";
     }
 
+    @GetMapping("/finalExamTest")
+    public String finalExamTest() {
+        return "finalExamTest";
+    }
+
     @GetMapping("/chiasweb")
     public String chiasweb(){
         return "chiasweb";
